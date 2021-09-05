@@ -7,8 +7,8 @@ const data = {
             image: '/images/product-1.jpeg',
             price: 12,
             brand: "'Hank's",
-            rating: 4.5,
-            numReviews: 10,
+            rating: 3.5,
+            numReviews: 20,
             description: 'spicy nector of the gods',
         },
         {
