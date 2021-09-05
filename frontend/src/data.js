@@ -25,9 +25,9 @@ const data = {
         {
             _id: '3',
             name: 'Product 3',
-            category: 'Sauce',
+            category: 'combo',
             image: '/images/product-3.jpeg',
-            price: 12,
+            price: 20,
             brand: "'Hank's",
             rating: 4.5,
             numReviews: 10,
@@ -36,9 +36,9 @@ const data = {
         {
             _id: '4',
             name: 'Product 4',
-            category: 'Sauce',
+            category: 'combo',
             image: '/images/product-4.jpeg',
-            price: 12,
+            price: 20,
             brand: "'Hank's",
             rating: 4.5,
             numReviews: 10,
@@ -91,3 +91,4 @@ const data = {
 
     ]
 }
+export default data
