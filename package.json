@@ -1,0 +1,23 @@
+{
+  "name": "hanks",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "## About This Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtscott90/Hanks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gtscott90/Hanks/issues"
+  },
+  "homepage": "https://github.com/gtscott90/Hanks#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
