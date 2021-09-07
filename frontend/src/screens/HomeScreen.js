@@ -28,7 +28,7 @@ export default function HomeScreen() {
         { loading ? (
             <LoadingBox></LoadingBox>
         ) : error ? (
-            <MessageBox>{error}</MessageBox>
+            <MessageBox varient="danger">{error}</MessageBox>
         ) : (
         <div className="row center">
             { products.map((product) => (
