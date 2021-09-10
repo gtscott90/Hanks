@@ -1,6 +1,6 @@
 import data from "./data";
-import { createStore } from 'redux';
-
+import { applyMiddleware, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
 // defining initial state
 const initialState = {};
 
@@ -12,6 +12,7 @@ const reducer = (state, action) => {
 
 // create stores with the create store function from redux
 // accepts reducer and initial state
-const store = createStore(reducer, initialState);
+// accpets third parameter called thunk to allow axios calls from store
+const store = createStore(reducer, initialState, compose(applyMiddleware(thunk)));
 
 export default store;
