@@ -9,10 +9,16 @@ const initialState = {};
 const reducer = (state, action) => {
     return {products: data.products}
 ;}
+// allow compose to connect to chrome devtools so see the state and store in Redux Dev Tools
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // create stores with the create store function from redux
 // accepts reducer and initial state
-// accpets third parameter called thunk to allow axios calls from store
-const store = createStore(reducer, initialState, compose(applyMiddleware(thunk)));
+// accpets third parameter called thunk to allow ajax calls from store
+const store = createStore(
+    reducer, 
+    initialState, 
+    composeEnhancer(applyMiddleware(thunk))
+    );
 
 export default store;
