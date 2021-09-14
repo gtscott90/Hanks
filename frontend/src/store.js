@@ -15,7 +15,7 @@ const initialState = {};
     // ;}
 // combineReducers accepts an object as a parameter and introduces the reducers to the store
 const reducer = combineReducers({
-    productList: productListReducer
+    productList: productListReducer,
     productDetails: productDetailsReducter
 })
 
