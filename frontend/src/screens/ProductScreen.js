@@ -1,15 +1,24 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
-import data from '../data'
+// import data from '../data'
 
 export default function ProductScreen(props) {
-    const product = data.products.find((x) => x._id === props.match.params.id);
-    if (!product) {
-        return <div>Product Not Found</div>
-    }
+    const productDetails = useSelector((state) => state.productDetails)
+    // desconstruction product, loading and error
+    const { loading, error, product } = productDetails;
+    
     return (
         <div>
+        { loading ? (
+            <LoadingBox></LoadingBox>
+        ) : error ? (
+            <MessageBox varient="danger">{error}</MessageBox>
+        ) : (
+       <div>
             <Link to="/">Back to Results</Link>
             <div className="row top">
                 <div className="col-2">
@@ -62,5 +71,15 @@ export default function ProductScreen(props) {
                 </div>
             </div>
         </div>
+            )} 
+        </div>
+        
     )
 }
+
+// to get from static file in front end: const product = data.products.find((x) => x._id === props.match.params.id);
+    // if (!product) {
+    //     return <div>Product Not Found</div>
+    // }
+    // add above at line 13
+    // remove content 15-21
