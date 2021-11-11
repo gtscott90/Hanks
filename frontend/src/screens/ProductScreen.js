@@ -1,16 +1,24 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { detailsProduct } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
 // import data from '../data'
 
 export default function ProductScreen(props) {
+    const dispatch = useDispatch();
+    // getting ID from url
+    const productId = props.match.params.id;
     const productDetails = useSelector((state) => state.productDetails)
     // desconstruction product, loading and error
     const { loading, error, product } = productDetails;
     
+    // dispatch product details with useEffect
+    useEffect(() => {
+        dispatch(detailsProduct(productId));
+    }, [dispatch, productId])
     return (
         <div>
         { loading ? (
